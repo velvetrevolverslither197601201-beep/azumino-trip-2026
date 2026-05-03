@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安曇野・松本 日帰り旅 2026.5.5</title>
+
+  <!-- OGP for LINE -->
+  <meta property="og:title" content="安曇野・松本 日帰り旅 2026.5.5" />
+  <meta property="og:description" content="3世代6人で楽しむGW安曇野・松本日帰り旅のしおり。ちひろ美術館・大王わさび農場・松本城などを巡ります🏔️" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&h=630&fit=crop" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+            serif: ['"Noto Serif JP"', 'serif'],
+          },
+          colors: {
+            alps: {
+              50:  '#f0f7ff',
+              100: '#dbeeff',
+              200: '#b0d9ff',
+              300: '#73bcff',
+              400: '#2e98f9',
+              500: '#0479e8',
+              600: '#0060c7',
+              700: '#004ea3',
+              800: '#054285',
+              900: '#0b376e',
+            },
+            forest: {
+              50:  '#f0fdf4',
+              100: '#dcfce7',
+              300: '#6ee7a0',
+              500: '#22c55e',
+              700: '#15803d',
+              900: '#14532d',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; }
+
+    /* Hero */
+    .hero-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(4,121,232,0.55) 0%, rgba(4,121,232,0.25) 50%, rgba(0,0,0,0.55) 100%),
+        url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=900&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center top;
+    }
+
+    /* Timeline */
+    .timeline-line {
+      position: absolute;
+      left: 1.35rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #0479e8, #22c55e);
+    }
+
+    /* Card */
+    .spot-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .spot-card:active { transform: scale(0.98); }
+
+    /* Checklist */
+    .check-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    .check-item input[type="checkbox"] { accent-color: #0479e8; }
+
+    /* Scroll anchor */
+    section { scroll-margin-top: 0; }
+
+    /* Pulse dot */
+    @keyframes ping {
+      75%, 100% { transform: scale(2); opacity: 0; }
+    }
+    .ping { animation: ping 1.4s cubic-bezier(0,0,0.2,1) infinite; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 text-base leading-relaxed" style="font-size:17px;">
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero-bg min-h-[60vw] max-h-[520px] flex flex-col justify-between px-5 pt-10 pb-8 text-white">
+  <div class="flex items-center gap-2 text-sm font-medium opacity-90">
+    <span class="text-xl">🏔️</span>
+    <span>3世代 GW 日帰り旅 2026</span>
+  </div>
+
+  <div>
+    <p class="text-sm font-medium tracking-widest uppercase opacity-80 mb-1">Travel Itinerary</p>
+    <h1 class="font-serif text-3xl font-bold leading-snug mb-1">
+      安曇野・松本<br />日帰り旅
+    </h1>
+    <p class="text-lg font-medium opacity-90 mb-4">2026年5月5日（火・祝）</p>
+
+    <div class="flex flex-wrap gap-2">
+      <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-sm">📍 埼玉 → 長野</span>
+      <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-sm">👨‍👩‍👧‍👦 6名</span>
+      <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-sm">🗺️ 5スポット</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200 overflow-x-auto">
+  <div class="flex gap-0 min-w-max px-2">
+    <a href="#members"  class="px-3 py-3 text-sm font-medium text-gray-600 hover:text-alps-600 whitespace-nowrap">👨‍👩‍👧‍👦 メンバー</a>
+    <a href="#timeline" class="px-3 py-3 text-sm font-medium text-gray-600 hover:text-alps-600 whitespace-nowrap">🕐 タイム</a>
+    <a href="#spots"    class="px-3 py-3 text-sm font-medium text-gray-600 hover:text-alps-600 whitespace-nowrap">📍 スポット</a>
+    <a href="#checklist"class="px-3 py-3 text-sm font-medium text-gray-600 hover:text-alps-600 whitespace-nowrap">✅ 持ち物</a>
+    <a href="#drive"    class="px-3 py-3 text-sm font-medium text-gray-600 hover:text-alps-600 whitespace-nowrap">🚗 ドライブ</a>
+    <a href="#emergency"class="px-3 py-3 text-sm font-medium text-gray-600 hover:text-alps-600 whitespace-nowrap">📞 緊急</a>
+  </div>
+</nav>
+
+<!-- =========================================================
+     MEMBERS
+========================================================= -->
+<section id="members" class="px-4 py-8">
+  <h2 class="font-serif text-xl font-bold text-alps-800 mb-5 flex items-center gap-2">
+    <span>👨‍👩‍👧‍👦</span> 旅のメンバー
+  </h2>
+  <div class="grid grid-cols-3 gap-3">
+    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+      <div class="text-3xl mb-1">👵</div>
+      <p class="font-bold text-sm">おばあちゃんA</p>
+      <p class="text-xs text-gray-500">80歳・女性</p>
+    </div>
+    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+      <div class="text-3xl mb-1">👵</div>
+      <p class="font-bold text-sm">おばあちゃんB</p>
+      <p class="text-xs text-gray-500">80歳・女性</p>
+    </div>
+    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+      <div class="text-3xl mb-1">👨</div>
+      <p class="font-bold text-sm">お父さん</p>
+      <p class="text-xs text-gray-500">50歳・運転担当</p>
+    </div>
+    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+      <div class="text-3xl mb-1">👩</div>
+      <p class="font-bold text-sm">お母さん</p>
+      <p class="text-xs text-gray-500">46歳・女性</p>
+    </div>
+    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+      <div class="text-3xl mb-1">🧒</div>
+      <p class="font-bold text-sm">こどもA</p>
+      <p class="text-xs text-gray-500">9歳</p>
+    </div>
+    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+      <div class="text-3xl mb-1">👶</div>
+      <p class="font-bold text-sm">こどもB</p>
+      <p class="text-xs text-gray-500">3歳</p>
+    </div>
+  </div>
+
+  <!-- Notice -->
+  <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm">
+    <p class="font-bold text-amber-800 mb-1">⚠️ バリアフリー配慮</p>
+    <p class="text-amber-700">おばあちゃん2人は長距離歩行・急な階段を避けています。<br>松本城天守は急階段のため<strong>外周散策のみ</strong>を推奨します。</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     TIMELINE
+========================================================= -->
+<section id="timeline" class="px-4 py-8 bg-white">
+  <h2 class="font-serif text-xl font-bold text-alps-800 mb-6 flex items-center gap-2">
+    <span>🕐</span> タイムライン
+  </h2>
+
+  <div class="relative pl-10">
+    <div class="timeline-line"></div>
+
+    <!-- 出発 -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-alps-600 rounded-full flex items-center justify-center text-white text-xs font-bold">🚗</div>
+      <div class="bg-alps-50 rounded-xl p-3">
+        <p class="text-xs text-alps-500 font-medium">6:00</p>
+        <p class="font-bold text-alps-800">東松山IC 出発</p>
+        <p class="text-sm text-gray-500">関越道 → 上信越道 → 長野道</p>
+      </div>
+    </div>
+
+    <!-- 安曇野IC -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-gray-400 rounded-full flex items-center justify-center text-white text-xs">🛑</div>
+      <div class="bg-gray-50 rounded-xl p-3">
+        <p class="text-xs text-gray-400 font-medium">9:00</p>
+        <p class="font-bold">安曇野IC 到着・休憩</p>
+        <p class="text-sm text-gray-500">30分休憩・トイレ・ストレッチ</p>
+      </div>
+    </div>
+
+    <!-- ①ちひろ -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-rose-400 rounded-full flex items-center justify-center text-white text-xs font-bold">①</div>
+      <a href="#spot-chihiro" class="block bg-rose-50 border border-rose-100 rounded-xl p-3 active:opacity-75">
+        <p class="text-xs text-rose-500 font-medium">10:00〜11:15 <span class="bg-rose-100 text-rose-600 rounded px-1 ml-1">75分</span></p>
+        <p class="font-bold text-rose-800">🎨 ちひろ美術館</p>
+        <p class="text-sm text-gray-500">いわさきちひろの絵本原画・トットちゃん広場</p>
+      </a>
+    </div>
+
+    <!-- ②HAMA -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-pink-400 rounded-full flex items-center justify-center text-white text-xs font-bold">②</div>
+      <a href="#spot-hama" class="block bg-pink-50 border border-pink-100 rounded-xl p-3 active:opacity-75">
+        <p class="text-xs text-pink-500 font-medium">11:35〜12:25 <span class="bg-pink-100 text-pink-600 rounded px-1 ml-1">50分</span></p>
+        <p class="font-bold text-pink-800">🌸 HAMAフラワーパーク</p>
+        <p class="text-sm text-gray-500">県下最大級の花・ジェラートを楽しむ</p>
+      </a>
+    </div>
+
+    <!-- ③ハイジ -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-orange-400 rounded-full flex items-center justify-center text-white text-xs font-bold">③</div>
+      <a href="#spot-heidi" class="block bg-orange-50 border border-orange-100 rounded-xl p-3 active:opacity-75">
+        <p class="text-xs text-orange-500 font-medium">12:35〜13:35 <span class="bg-orange-100 text-orange-600 rounded px-1 ml-1">60分</span></p>
+        <p class="font-bold text-orange-800">🍕 ハイジの里（ランチ）</p>
+        <p class="text-sm text-gray-500">トマトソフト・焼きたてピザ</p>
+      </a>
+    </div>
+
+    <!-- ④大王 -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-forest-700 rounded-full flex items-center justify-center text-white text-xs font-bold">④</div>
+      <a href="#spot-wasabi" class="block bg-forest-50 border border-forest-100 rounded-xl p-3 active:opacity-75">
+        <p class="text-xs text-forest-700 font-medium">13:55〜15:10 <span class="bg-green-100 text-green-700 rounded px-1 ml-1">75分</span></p>
+        <p class="font-bold text-forest-900">🌿 大王わさび農場</p>
+        <p class="text-sm text-gray-500">日本一わさび農場・わさびソフト</p>
+      </a>
+    </div>
+
+    <!-- ⑤松本城 -->
+    <div class="relative mb-6">
+      <div class="absolute -left-10 w-7 h-7 bg-alps-800 rounded-full flex items-center justify-center text-white text-xs font-bold">⑤</div>
+      <a href="#spot-castle" class="block bg-alps-50 border border-alps-100 rounded-xl p-3 active:opacity-75">
+        <p class="text-xs text-alps-500 font-medium">15:35〜16:35 <span class="bg-alps-100 text-alps-700 rounded px-1 ml-1">60分</span></p>
+        <p class="font-bold text-alps-900">🏯 松本城</p>
+        <p class="text-sm text-gray-500">国宝・現存12天守・外周散策</p>
+      </a>
+    </div>
+
+    <!-- 帰路 -->
+    <div class="relative">
+      <div class="absolute -left-10 w-7 h-7 bg-alps-600 rounded-full flex items-center justify-center text-white text-xs">🏠</div>
+      <div class="bg-alps-50 rounded-xl p-3">
+        <p class="text-xs text-alps-500 font-medium">17:00 出発 → 20:00頃 帰宅</p>
+        <p class="font-bold text-alps-800">松本IC → 東松山IC</p>
+        <p class="text-sm text-gray-500">長野道 → 上信越道 → 関越道</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SPOTS
+========================================================= -->
+<section id="spots" class="px-4 py-8">
+  <h2 class="font-serif text-xl font-bold text-alps-800 mb-6 flex items-center gap-2">
+    <span>📍</span> スポット詳細
+  </h2>
+
+  <!-- ①ちひろ美術館 -->
+  <div id="spot-chihiro" class="spot-card bg-white mb-6">
+    <div class="relative h-44 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1578926288207-a90a9e983d68?w=700&q=75&auto=format&fit=crop"
+        alt="美術館イメージ"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div class="absolute bottom-3 left-4 text-white">
+        <span class="bg-rose-500 text-white text-xs font-bold px-2 py-0.5 rounded-full mr-2">① 10:00〜</span>
+        <span class="text-sm font-bold">75分</span>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="font-serif text-lg font-bold mb-1">🎨 安曇野ちひろ美術館</h3>
+      <p class="text-sm text-gray-500 mb-3">〒399-8501 長野県北安曇郡松川村西原3358-24</p>
+
+      <div class="flex flex-wrap gap-2 text-sm mb-4">
+        <span class="bg-gray-100 rounded-lg px-3 py-1">🕘 9:00〜17:00</span>
+        <span class="bg-green-100 text-green-700 rounded-lg px-3 py-1">入場料あり</span>
+      </div>
+
+      <div class="bg-amber-50 rounded-lg p-3 text-sm mb-4">
+        <p class="font-bold text-amber-800 mb-1">✨ 見どころ</p>
+        <ul class="text-amber-700 space-y-1">
+          <li>・いわさきちひろの絵本原画</li>
+          <li>・トットちゃん広場（屋外遊び場）</li>
+          <li>・絵本の部屋（子供も大人も楽しめる）</li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <a href="https://chihiro.jp/azumino/" target="_blank" rel="noopener"
+           class="bg-alps-600 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-alps-700">
+          🌐 公式
+        </a>
+        <a href="https://maps.google.com/?cid=1923136445916712001" target="_blank" rel="noopener"
+           class="bg-forest-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-forest-800">
+          📍 地図
+        </a>
+        <a href="tel:0261620772"
+           class="bg-gray-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-gray-800">
+          📞 電話
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ②HAMAフラワーパーク -->
+  <div id="spot-hama" class="spot-card bg-white mb-6">
+    <div class="relative h-44 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1490750967868-88df5691cc9d?w=700&q=75&auto=format&fit=crop"
+        alt="花畑イメージ"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div class="absolute bottom-3 left-4 text-white">
+        <span class="bg-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded-full mr-2">② 11:35〜</span>
+        <span class="text-sm font-bold">50分</span>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="font-serif text-lg font-bold mb-1">🌸 HAMAフラワーパーク安曇野</h3>
+      <p class="text-sm text-gray-500 mb-3">〒399-8102 長野県安曇野市三郷温5919</p>
+
+      <div class="flex flex-wrap gap-2 text-sm mb-4">
+        <span class="bg-gray-100 rounded-lg px-3 py-1">🕘 9:30〜17:30</span>
+      </div>
+
+      <div class="bg-pink-50 rounded-lg p-3 text-sm mb-4">
+        <p class="font-bold text-pink-800 mb-1">✨ 見どころ</p>
+        <ul class="text-pink-700 space-y-1">
+          <li>・県下最大級の花・園芸複合施設</li>
+          <li>・5月は春の花が満開</li>
+          <li>・ジェラートが人気（3歳も喜ぶ！）</li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <a href="https://hamaengei.com/flowerpark/" target="_blank" rel="noopener"
+           class="bg-alps-600 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-alps-700">
+          🌐 公式
+        </a>
+        <a href="https://maps.google.com/?cid=18254556876277803804" target="_blank" rel="noopener"
+           class="bg-forest-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-forest-800">
+          📍 地図
+        </a>
+        <a href="tel:0263778300"
+           class="bg-gray-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-gray-800">
+          📞 電話
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ハイジの里 -->
+  <div id="spot-heidi" class="spot-card bg-white mb-6">
+    <div class="relative h-44 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700&q=75&auto=format&fit=crop"
+        alt="ピザイメージ"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div class="absolute bottom-3 left-4 text-white">
+        <span class="bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full mr-2">③ 12:35〜</span>
+        <span class="text-sm font-bold">60分（ランチ）</span>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="font-serif text-lg font-bold mb-1">🏠 安曇野スイス村ハイジの里</h3>
+      <p class="text-sm text-gray-500 mb-3">〒399-8201 長野県安曇野市豊科南穂高5566-1</p>
+
+      <div class="flex flex-wrap gap-2 text-sm mb-4">
+        <span class="bg-gray-100 rounded-lg px-3 py-1">🕘 9:00〜18:00</span>
+        <span class="bg-orange-100 text-orange-700 rounded-lg px-3 py-1">ランチスポット</span>
+      </div>
+
+      <div class="bg-orange-50 rounded-lg p-3 text-sm mb-4">
+        <p class="font-bold text-orange-800 mb-1">✨ 見どころ・おすすめ</p>
+        <ul class="text-orange-700 space-y-1">
+          <li>・JA最大級の直売所（新鮮野菜）</li>
+          <li>・<strong>名物トマトソフト</strong>（子供も大好き！）</li>
+          <li>・<strong>焼きたてピザ</strong>（ランチにおすすめ）</li>
+          <li>・お土産探しにも最適</li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <a href="https://www.ja-azm.iijan.or.jp/farmers_market/haiji/" target="_blank" rel="noopener"
+           class="bg-alps-600 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-alps-700">
+          🌐 公式
+        </a>
+        <a href="https://maps.google.com/?cid=6859237451743789915" target="_blank" rel="noopener"
+           class="bg-forest-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-forest-800">
+          📍 地図
+        </a>
+        <a href="tel:0263870812"
+           class="bg-gray-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-gray-800">
+          📞 電話
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④大王わさび農場 -->
+  <div id="spot-wasabi" class="spot-card bg-white mb-6">
+    <div class="relative h-44 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=700&q=75&auto=format&fit=crop"
+        alt="わさび農場イメージ"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div class="absolute bottom-3 left-4 text-white">
+        <span class="bg-green-600 text-white text-xs font-bold px-2 py-0.5 rounded-full mr-2">④ 13:55〜</span>
+        <span class="text-sm font-bold">75分</span>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="font-serif text-lg font-bold mb-1">🌿 大王わさび農場</h3>
+      <p class="text-sm text-gray-500 mb-3">〒399-8303 長野県安曇野市穂高3640</p>
+
+      <div class="flex flex-wrap gap-2 text-sm mb-4">
+        <span class="bg-gray-100 rounded-lg px-3 py-1">🕘 8:00〜17:00</span>
+        <span class="bg-green-100 text-green-700 rounded-lg px-3 py-1">🆓 入園無料</span>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm mb-3">
+        <p class="font-bold text-amber-800">⚠️ GW注意</p>
+        <p class="text-amber-700">駐車場待ちの可能性あり。時間に余裕を持って。</p>
+      </div>
+
+      <div class="bg-green-50 rounded-lg p-3 text-sm mb-4">
+        <p class="font-bold text-green-800 mb-1">✨ 見どころ</p>
+        <ul class="text-green-700 space-y-1">
+          <li>・日本一のわさび農場（広大な緑）</li>
+          <li>・湧き水と水車（写真映え抜群！）</li>
+          <li>・<strong>わさびソフトクリーム</strong>（ぜひ挑戦）</li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <a href="https://www.daiowasabi.co.jp/" target="_blank" rel="noopener"
+           class="bg-alps-600 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-alps-700">
+          🌐 公式
+        </a>
+        <a href="https://maps.google.com/?cid=15613363609043097344" target="_blank" rel="noopener"
+           class="bg-forest-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-forest-800">
+          📍 地図
+        </a>
+        <a href="tel:0263822118"
+           class="bg-gray-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-gray-800">
+          📞 電話
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤松本城 -->
+  <div id="spot-castle" class="spot-card bg-white mb-6">
+    <div class="relative h-44 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=700&q=75&auto=format&fit=crop"
+        alt="松本城イメージ"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div class="absolute bottom-3 left-4 text-white">
+        <span class="bg-alps-700 text-white text-xs font-bold px-2 py-0.5 rounded-full mr-2">⑤ 15:35〜</span>
+        <span class="text-sm font-bold">60分</span>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="font-serif text-lg font-bold mb-1">🏯 松本城</h3>
+      <p class="text-sm text-gray-500 mb-3">〒390-0873 長野県松本市丸の内4-1</p>
+
+      <div class="flex flex-wrap gap-2 text-sm mb-4">
+        <span class="bg-gray-100 rounded-lg px-3 py-1">🕗 8:30〜17:00</span>
+        <span class="bg-alps-100 text-alps-700 rounded-lg px-3 py-1">大人700円</span>
+        <span class="bg-alps-100 text-alps-700 rounded-lg px-3 py-1">小中300円</span>
+      </div>
+
+      <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-sm mb-3">
+        <p class="font-bold text-red-800">⚠️ おばあちゃんへの注意</p>
+        <p class="text-red-700">天守内部は<strong>急な階段</strong>が多数あります。<br>80代のおばあちゃんは<strong>外周散策・お堀を楽しむ</strong>ことをおすすめします。</p>
+      </div>
+
+      <div class="bg-alps-50 rounded-lg p-3 text-sm mb-4">
+        <p class="font-bold text-alps-800 mb-1">✨ 見どころ</p>
+        <ul class="text-alps-700 space-y-1">
+          <li>・国宝・現存12天守のひとつ</li>
+          <li>・五重六階の黒い天守（日本最古）</li>
+          <li>・最終入場は<strong>16:30まで</strong>に注意</li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <a href="https://www.matsumoto-castle.jp/" target="_blank" rel="noopener"
+           class="bg-alps-600 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-alps-700">
+          🌐 公式
+        </a>
+        <a href="https://maps.google.com/?cid=10388975450222032468" target="_blank" rel="noopener"
+           class="bg-forest-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-forest-800">
+          📍 地図
+        </a>
+        <a href="tel:0263322902"
+           class="bg-gray-700 text-white text-sm font-medium rounded-xl py-3 text-center active:bg-gray-800">
+          📞 電話
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CHECKLIST
+========================================================= -->
+<section id="checklist" class="px-4 py-8 bg-white">
+  <h2 class="font-serif text-xl font-bold text-alps-800 mb-2 flex items-center gap-2">
+    <span>✅</span> 持ち物チェックリスト
+  </h2>
+  <p class="text-sm text-gray-500 mb-5">チェックは自動で保存されます</p>
+
+  <div id="checklist-container" class="space-y-1">
+    <!-- JS で挿入 -->
+  </div>
+
+  <button onclick="resetChecklist()" class="mt-5 w-full border border-gray-300 text-gray-500 rounded-xl py-3 text-sm active:bg-gray-100">
+    🔄 リセット
+  </button>
+</section>
+
+<!-- =========================================================
+     DRIVE
+========================================================= -->
+<section id="drive" class="px-4 py-8">
+  <h2 class="font-serif text-xl font-bold text-alps-800 mb-5 flex items-center gap-2">
+    <span>🚗</span> ドライブ情報
+  </h2>
+
+  <!-- ルート -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
+    <p class="font-bold mb-3">🛣️ ルート</p>
+    <div class="space-y-2 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="text-alps-600 font-bold w-12">行き</span>
+        <span class="text-gray-600">東松山IC → 関越道 → 藤岡JCT → 上信越道 → 更埴JCT → 長野道 → 安曇野IC</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-alps-600 font-bold w-12">帰り</span>
+        <span class="text-gray-600">松本IC → 長野道 → 更埴JCT → 上信越道 → 藤岡JCT → 関越道 → 東松山IC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 料金 -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
+    <p class="font-bold mb-3">💴 高速料金（概算）</p>
+    <div class="space-y-2 text-sm">
+      <div class="flex justify-between py-1 border-b border-gray-100">
+        <span>東松山IC → 安曇野IC</span>
+        <span class="font-bold text-alps-700">約 4,500円</span>
+      </div>
+      <div class="flex justify-between py-1 border-b border-gray-100">
+        <span>松本IC → 東松山IC</span>
+        <span class="font-bold text-alps-700">約 4,500円</span>
+      </div>
+      <div class="flex justify-between py-2">
+        <span class="font-bold">往復合計（目安）</span>
+        <span class="font-bold text-lg text-alps-700">約 9,000円</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-1">※ETC割引適用後の概算。GW期間は割引なしの場合あり</p>
+  </div>
+
+  <!-- SA -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
+    <p class="font-bold mb-3">🅿️ 休憩スポット候補</p>
+    <div class="space-y-3">
+      <div class="border-l-4 border-alps-400 pl-3">
+        <p class="font-bold text-sm">横川SA（関越→上信越）</p>
+        <p class="text-sm text-gray-500">釜飯で有名。東松山から約1時間。トイレ・食事可。</p>
+      </div>
+      <div class="border-l-4 border-forest-500 pl-3">
+        <p class="font-bold text-sm">梓川SA（長野道）</p>
+        <p class="text-sm text-gray-500">安曇野IC直前。北アルプスの展望が美しい。帰りも活用可。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注意 -->
+  <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-sm">
+    <p class="font-bold text-amber-800 mb-2">⚠️ GW渋滞情報</p>
+    <ul class="text-amber-700 space-y-1">
+      <li>・5/3・5/6は渋滞ピーク。<strong>5/5は比較的空いている</strong>見込み</li>
+      <li>・早朝6:00出発で渋滞を回避</li>
+      <li>・帰路17:00出発も渋滞前に動けるタイミング</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     EMERGENCY
+========================================================= -->
+<section id="emergency" class="px-4 py-8 bg-white">
+  <h2 class="font-serif text-xl font-bold text-alps-800 mb-5 flex items-center gap-2">
+    <span>📞</span> 緊急連絡先
+  </h2>
+
+  <div class="space-y-3">
+
+    <div class="bg-gray-50 rounded-xl p-4">
+      <p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">各施設</p>
+      <div class="space-y-2">
+        <a href="tel:0261620772" class="flex items-center justify-between py-2 border-b border-gray-100 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🎨 ちひろ美術館</p>
+            <p class="text-xs text-gray-400">0261-62-0772</p>
+          </div>
+          <span class="bg-alps-100 text-alps-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+        <a href="tel:0263778300" class="flex items-center justify-between py-2 border-b border-gray-100 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🌸 HAMAフラワーパーク</p>
+            <p class="text-xs text-gray-400">0263-77-8300</p>
+          </div>
+          <span class="bg-alps-100 text-alps-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+        <a href="tel:0263870812" class="flex items-center justify-between py-2 border-b border-gray-100 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🏠 ハイジの里</p>
+            <p class="text-xs text-gray-400">0263-87-0812</p>
+          </div>
+          <span class="bg-alps-100 text-alps-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+        <a href="tel:0263822118" class="flex items-center justify-between py-2 border-b border-gray-100 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🌿 大王わさび農場</p>
+            <p class="text-xs text-gray-400">0263-82-2118</p>
+          </div>
+          <span class="bg-alps-100 text-alps-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+        <a href="tel:0263322902" class="flex items-center justify-between py-2 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🏯 松本城</p>
+            <p class="text-xs text-gray-400">0263-32-2902</p>
+          </div>
+          <span class="bg-alps-100 text-alps-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-red-50 rounded-xl p-4">
+      <p class="text-xs text-red-400 font-medium uppercase tracking-wider mb-2">ロードサービス</p>
+      <div class="space-y-2">
+        <a href="tel:0570000818" class="flex items-center justify-between py-2 border-b border-red-100 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🚘 JAF ロードサービス</p>
+            <p class="text-xs text-red-400">0570-00-0818（全国共通）</p>
+          </div>
+          <span class="bg-red-100 text-red-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+        <a href="tel:0120078915" class="flex items-center justify-between py-2 active:opacity-70">
+          <div>
+            <p class="font-medium text-sm">🛣️ NEXCO東日本</p>
+            <p class="text-xs text-red-400">0120-078-915（高速道路故障）</p>
+          </div>
+          <span class="bg-red-100 text-red-700 text-sm font-bold px-3 py-1.5 rounded-lg">📞 発信</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-orange-50 rounded-xl p-4">
+      <p class="text-xs text-orange-400 font-medium uppercase tracking-wider mb-2">緊急</p>
+      <div class="grid grid-cols-2 gap-2">
+        <a href="tel:110" class="bg-white border border-orange-200 rounded-xl py-3 text-center active:opacity-70">
+          <p class="text-lg">🚔</p>
+          <p class="font-bold text-sm">警察 110</p>
+        </a>
+        <a href="tel:119" class="bg-white border border-orange-200 rounded-xl py-3 text-center active:opacity-70">
+          <p class="text-lg">🚑</p>
+          <p class="font-bold text-sm">救急・消防 119</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="bg-alps-900 text-white px-4 py-8 text-center">
+  <p class="text-2xl mb-2">🏔️</p>
+  <p class="font-serif font-bold text-lg mb-1">安曇野・松本 日帰り旅 2026</p>
+  <p class="text-alps-300 text-sm">3世代6人で楽しい思い出を🌿</p>
+  <p class="text-alps-400 text-xs mt-4">2026年5月5日（火・祝）</p>
+</footer>
+
+<!-- =========================================================
+     JS
+========================================================= -->
+<script>
+  const ITEMS = [
+    { id: 'insurance',  label: '健康保険証', icon: '🏥' },
+    { id: 'medicine',   label: '常備薬・酔い止め', icon: '💊' },
+    { id: 'sunscreen',  label: '日焼け止め・帽子', icon: '🧴' },
+    { id: 'drinks',     label: '飲み物・おやつ', icon: '🧃' },
+    { id: 'baby',       label: 'お子様用おむつ・おやつ（3歳用）', icon: '👶' },
+    { id: 'jacket',     label: '上着（山間部は朝晩冷える）', icon: '🧥' },
+    { id: 'shoes',      label: '歩きやすい靴', icon: '👟' },
+    { id: 'battery',    label: 'モバイルバッテリー', icon: '🔋' },
+    { id: 'camera',     label: 'カメラ・充電確認', icon: '📷' },
+    { id: 'cash',       label: '現金（駐車場・入場料）', icon: '💴' },
+  ];
+
+  const KEY = 'azumino2026_checklist';
+
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
+    catch { return {}; }
+  }
+
+  function saveState(state) {
+    localStorage.setItem(KEY, JSON.stringify(state));
+  }
+
+  function buildChecklist() {
+    const state = loadState();
+    const container = document.getElementById('checklist-container');
+    container.innerHTML = '';
+
+    ITEMS.forEach(item => {
+      const checked = !!state[item.id];
+      const div = document.createElement('div');
+      div.className = 'check-item flex items-center gap-3 py-3 px-4 bg-gray-50 rounded-xl mb-2 cursor-pointer';
+      div.innerHTML = `
+        <input type="checkbox" id="chk-${item.id}" ${checked ? 'checked' : ''}
+               class="w-5 h-5 flex-shrink-0 cursor-pointer rounded" />
+        <label for="chk-${item.id}" class="flex items-center gap-2 cursor-pointer flex-1 text-base">
+          <span>${item.icon}</span>
+          <span>${item.label}</span>
+        </label>
+      `;
+      const cb = div.querySelector('input');
+      cb.addEventListener('change', () => {
+        const s = loadState();
+        s[item.id] = cb.checked;
+        saveState(s);
+      });
+      container.appendChild(div);
+    });
+  }
+
+  function resetChecklist() {
+    localStorage.removeItem(KEY);
+    buildChecklist();
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  buildChecklist();
+</script>
+
+</body>
+</html>
